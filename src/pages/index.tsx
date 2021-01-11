@@ -1,18 +1,21 @@
 import * as React from "react";
-import Header from "../components/Header";
-import { Link } from "gatsby";
+import Layout from "../components/layout";
 
 const styles = {
   color: "navy",
 };
-const IndexPage = () => {
+const Home = () => {
   return (
-    <div>
-      <h1 style={styles}>Hello from index page</h1>
-      <Header text="This is a heading" subtext="This is a sub heading" />
-      <Link to="/about/">About</Link>
-    </div>
+    <Layout>
+      <h1 style={styles}>
+        Hello I'm building a fake gatsby site as part of a tutorial
+      </h1>
+      <p>
+        What do I like to do? lots of course but mostyly I build websites and I
+        also like to play Football that is very close to my heart
+      </p>
+    </Layout>
   );
 };
 
-export default IndexPage;
+export default Home;
