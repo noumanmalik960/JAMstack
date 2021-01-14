@@ -11,6 +11,8 @@ const IndexPage = () => {
       <h1 style={styles}>Hello from index page</h1>
       <Header text="This is a heading" subtext="This is a sub heading" />
       <Link to="/about/">About</Link>
+      <br />
+      <Link to="/my-dynamic-page">Dynamic page</Link>
     </div>
   );
 };
