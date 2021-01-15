@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import React from "react";
+import Button from "@material-ui/core/Button";
 
 const Layout = ({ children }) => {
   return (
@@ -13,6 +14,12 @@ const Layout = ({ children }) => {
       <Link to="/">Index</Link>
       <br />
       <Link to="/about">About</Link>
+      <br />
+      <br />
+      <h2>Material UI button</h2>
+      <Button size="small" variant="contained" color="primary">
+        Click
+      </Button>
     </div>
   );
 };

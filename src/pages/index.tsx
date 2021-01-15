@@ -14,6 +14,7 @@ const IndexPage = () => {
       <Link to="/about/">About</Link>
       <br />
       <Link to="/my-dynamic-page">Dynamic page</Link>
+      <br />
     </Layout>
   );
 };
