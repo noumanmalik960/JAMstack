@@ -1,16 +1,12 @@
-const dotenv = require("dotenv")
-dotenv.config();
-
 module.exports = {
   plugins: [
-    "gatsby-plugin-typescript",
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-material-ui`,
     {
-      resolve: `gatsby-source-contentful`,
+      resolve: `gatsby-plugin-typography`,
       options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        pathToConfigModule: `src/utils/typography`,
       }
-    },
-
+    }
   ],
 };

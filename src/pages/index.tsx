@@ -1,6 +1,5 @@
 import * as React from "react";
 import { graphql, Link } from "gatsby";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const styles = {
   color: "navy",
@@ -28,6 +27,7 @@ const IndexPage = ({ data }) => {
         <Link to="/about">About</Link>
       </h3>
     </div>
+    
   );
 };
 

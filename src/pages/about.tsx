@@ -1,18 +1,14 @@
-import React from "react";
 import { Link } from "gatsby";
+import React from "react";
+import Layout from "../components/Layout";
 
-const About = () => {
-  const styles = {
-    color: "navy",
-  };
+const about = () => {
   return (
-    <div>
-      <h1 style={styles}>This is About page</h1>
-      <h3>
-        <Link to="/">Home</Link>
-      </h3>
-    </div>
+    <Layout>
+      <h1>This is About page</h1>
+      <Link to="/">Home</Link>
+    </Layout>
   );
 };
 
-export default About;
+export default about;
