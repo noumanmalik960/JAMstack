@@ -1,33 +1,25 @@
 import * as React from "react";
 import { graphql, Link } from "gatsby";
+import Layout from "../components/Layout";
 
 const styles = {
   color: "navy",
 };
 const IndexPage = ({ data }) => {
-  // console.log(data);
-  // const finalData = data.allContentfulBlogPost.edges[0].node.body;
-  // const dataa = JSON.parse(finalData);
-  // console.log(dataa);
+  // console.log("this is the data: ", data);
+  const posts = data.allContentfulBlogPost.edges.map((post, index) => (
+    <li key={index}>
+      <Link to={post.node.slug}>{post.node.title}</Link>
+    </li>
+  ));
 
   return (
-    <div>
-      <h1 style={styles}>This is the Title</h1>
-      <h2>Here is the data fetched from Contentful</h2>
-      {data.allContentfulBlogPost.edges[0].node.title}
-      <br />
-      {data.allContentfulBlogPost.edges[0].node.publishDate}
-      <br />
-      {data.allContentfulBlogPost.edges[0].node.body.raw}
-      <hr />
-      {JSON.stringify(data.allContentfulBlogPost.edges[0].node.body.raw)}
-      {/* {documentToReactComponents(dataa)} */}
-      <br />
-      <h3>
-        <Link to="/about">About</Link>
+    <Layout>
+      <h3 style={styles}>
+        These are the posts fetched from contentful using graphql
       </h3>
-    </div>
-    
+      {posts}
+    </Layout>
   );
 };
 
@@ -37,6 +29,7 @@ export const query = graphql`
       edges {
         node {
           title
+          slug
           publishDate(formatString: "d-m-y")
           body {
             raw
